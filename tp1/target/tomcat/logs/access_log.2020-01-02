@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:18:03:35 +0100] "GET / HTTP/1.1" 404 951 http-bio-8080-exec-2 151
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:18:03:54 +0100] "GET /bonjour.html HTTP/1.1" 404 975 http-bio-8080-exec-3 5
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:18:05:42 +0100] "GET / HTTP/1.1" 200 76 http-bio-8080-exec-2 228
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:18:06:27 +0100] "GET /headless-content.js.map HTTP/1.1" 404 997 http-bio-8080-exec-3 7
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:21:47:07 +0100] "GET /contentDocumentStart.js HTTP/1.1" 404 997 http-bio-8080-exec-5 80
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:21:47:41 +0100] "GET /contentDocumentStart.js HTTP/1.1" 404 997 http-bio-8080-exec-6 8
+0:0:0:0:0:0:0:1 - - [02/Jan/2020:23:14:33 +0100] "GET /contentDocumentStart.js HTTP/1.1" 404 997 http-bio-8080-exec-8 34
