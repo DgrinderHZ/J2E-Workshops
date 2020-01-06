@@ -37,6 +37,8 @@
                     <version>2.2</version>
                     <configuration>
                         <path>/</path>
+                        <!-- http port -->
+      					<port>9090</port>
                         <contextReloadable>true</contextReloadable>
                     </configuration>
                 </plugin>
