@@ -8,5 +8,6 @@
 	<!-- routes : redirect to-->
     <welcome-file-list> 
         <welcome-file>bonjour.do</welcome-file>
+        <welcome-file>ECHOJSP.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
