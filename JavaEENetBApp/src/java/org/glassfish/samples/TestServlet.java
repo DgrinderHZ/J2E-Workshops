@@ -7,11 +7,14 @@ package org.glassfish.samples;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.glassfish.samples.model.Friend;
 
 /**
  *
@@ -20,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "TestServlet", urlPatterns = {"/TestServlet"})
 public class TestServlet extends HttpServlet {
 
+    @PersistenceUnit
+    EntityManagerFactory emf;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,7 +46,18 @@ public class TestServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet TestServlet at " + request.getContextPath() + "</h1>");
-                    
+            int count;
+            if(request.getSession().getAttribute("count") == null){
+               count = 0;
+            }else{
+                count = (Integer) request.getSession().getAttribute("count");
+            }
+            request.getSession().setAttribute("count", ++count);
+            out.println("Accessed again: " + request.getSession().getAttribute("count"));
+            
+            Friend f = (Friend) emf.createEntityManager().createNamedQuery("Friend.findAll").getResultList().get(0);
+            out.println("Friend: " + f.getName());
+            
             out.println("</body>");
             out.println("</html>");
         }
